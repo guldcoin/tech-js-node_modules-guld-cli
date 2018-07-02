@@ -1,15 +1,17 @@
 #!/usr/bin/env node
 const program = require('commander')
+// const pify = require('pify')
+const fork = require('child_process').fork
 const pkg = require('./package.json')
 const VERSION = pkg.version
 
 const COMMANDS = {
-  'user': ['Guld user management tools. Get, list, and check users of the guld group.', {isDefault: true}],
+  'user': ['Guld user management tools. Get, list, and check users of the guld group.'],
   'env': ['Guld environment detection.'],
   'git': ['Git tools and commands.'],
   'mail': ['Guld mail is a signed, encrypted, and witnessed email system.'],
   'keys': ['Cryptographic key storage and usage.'],
-  'pass': ['Encrypted password management.'],
+  'pass': ['Encrypted password management comaptible with Standard Unix Password Store.'],
   'ledger': ['Guld ledger.'],
   'fs': ['Guld filesystem tools.']
 }
@@ -22,6 +24,19 @@ program
     if (n) process.env.GULDNAME = global.GULDNAME = n
     return true
   })
+/*
+program
+  .command('init')
+  .description('Initialize a guld account and services.')
+  .action(async options => {
+    console.log(options)
+    await pexec('guld-user', ['init'], { env: process.env, stdin: 'inherit' })
+    await pexec('guld-mail', ['init'], { env: process.env, stdin: 'inherit' })
+    await pexec('guld-keys', ['init'], { env: process.env, stdin: 'inherit' })
+    await pexec('guld-pass', ['init'], { env: process.env, stdin: 'inherit' })
+    await pexec('guld-git-host', ['init'], { env: process.env, stdin: 'inherit' })
+  })
+*/
   // .option('-q, --quiet', '')
 
 for (var cmd in COMMANDS) {
