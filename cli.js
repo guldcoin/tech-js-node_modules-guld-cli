@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 const program = require('commander')
 // const pify = require('pify')
-const fork = require('child_process').fork
+// const fork = require('child_process').fork
 const pkg = require('./package.json')
 const VERSION = pkg.version
 
@@ -50,4 +50,3 @@ for (var cmd in COMMANDS) {
 }
 
 program.parse(process.argv)
-
