@@ -1,6 +1,6 @@
 {
   "name": "guld-cli",
-  "version": "1.1.6",
+  "version": "1.1.7",
   "description": "Guld Command Line Interface (CLI)",
   "bin": {
     "guld": "./cli.js"
@@ -44,5 +44,8 @@
   "readme": "README.md",
   "engines": {
     "node": ">=7"
-  }
+  },
+  "homepage": "https://github.com/isysd/tech-js-node_modules-guld-cli#readme",
+  "preferGlobal": true,
+  "repository": "git@github.com:isysd/tech-js-node_modules-guld-cli.git"
 }
