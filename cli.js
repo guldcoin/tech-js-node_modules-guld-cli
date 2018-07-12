@@ -6,13 +6,14 @@ const pkg = require('./package.json')
 const VERSION = pkg.version
 
 const COMMANDS = {
-  'user': ['Guld user management tools. Get, list, and check users of the guld group.'],
+  'user': ['Guld user management tools. Get, list, and check users.'],
   'env': ['Guld environment detection.'],
   'git': ['Git tools and commands.'],
   'mail': ['Guld mail is a signed, encrypted, and witnessed email system.'],
   'keys': ['Cryptographic key storage and usage.'],
-  'pass': ['Encrypted password management comaptible with Standard Unix Password Store.'],
-  'ledger': ['Guld ledger.'],
+  'pass': ['Encrypted password management comaptible with passwordstore.org.'],
+  'ledger': ['Guld ledger manager.'],
+  'random': ['Cryptographically secure random number (& string) generator.'],
   'fs': ['Guld filesystem tools.']
 }
 
