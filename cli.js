@@ -1,9 +1,6 @@
 #!/usr/bin/env node
 const program = require('commander')
-// const pify = require('pify')
-// const fork = require('child_process').fork
-const pkg = require('./package.json')
-const VERSION = pkg.version
+const thispkg = require(`${__dirname}/package.json`)
 
 const COMMANDS = {
   'user': ['Guld user management tools. Get, list, and check users.'],
@@ -14,13 +11,14 @@ const COMMANDS = {
   'pass': ['Encrypted password management comaptible with passwordstore.org.'],
   'ledger': ['Guld ledger manager.'],
   'random': ['Cryptographically secure random number (& string) generator.'],
-  'fs': ['Guld filesystem tools.']
+  'fs': ['Guld filesystem tools.'],
+  'sdk': ['Guld Software Developer Kit.']
 }
 
 program
-  .name('guld')
-  .version(VERSION)
-  .description('Guld decentralized internet command line.')
+  .name(thispkg.name.replace('-cli', ''))
+  .version(thispkg.version)
+  .description(thispkg.description)
   .option('-u --user <name>', 'The user name to run as.', (n) => {
     if (n) process.env.GULDNAME = global.GULDNAME = n
     return true
@@ -38,7 +36,7 @@ program
     await pexec('guld-git-host', ['init'], { env: process.env, stdin: 'inherit' })
   })
 */
-  // .option('-q, --quiet', '')
+// .option('-q, --quiet', '')
 
 for (var cmd in COMMANDS) {
   var cmds = COMMANDS[cmd]
@@ -50,4 +48,9 @@ for (var cmd in COMMANDS) {
   }
 }
 
-program.parse(process.argv)
+if (process.argv.length === 2) {
+  program.help()
+} else if (process.argv.length > 2) {
+  program.parse(process.argv)
+}
+module.exports = program

@@ -1,10 +1,16 @@
 # guld-cli
 
-Universal wrapper for guld commands. Discovers `guld-*` commands and allows them to be called as `guld *` from the main script.
+[![source](https://img.shields.io/badge/source-bitbucket-blue.svg)](https://bitbucket.org/guld/tech-js-node_modules-guld-cli) [![issues](https://img.shields.io/badge/issues-bitbucket-yellow.svg)](https://bitbucket.org/guld/tech-js-node_modules-guld-cli/issues) [![documentation](https://img.shields.io/badge/docs-guld.tech-green.svg)](https://guld.tech/cli/guld-cli.html)
+
+[![node package manager](https://img.shields.io/npm/v/guld-cli.svg)](https://www.npmjs.com/package/guld-cli) [![travis-ci](https://travis-ci.org/guldcoin/tech-js-node_modules-guld-cli.svg)](https://travis-ci.org/guldcoin/tech-js-node_modules-guld-cli?branch=guld) [![lgtm](https://img.shields.io/lgtm/grade/javascript/b/guld/tech-js-node_modules-guld-cli.svg?logo=lgtm&logoWidth=18)](https://lgtm.com/projects/b/guld/tech-js-node_modules-guld-cli/context:javascript) [![david-dm](https://david-dm.org/guldcoin/tech-js-node_modules-guld-cli/status.svg)](https://david-dm.org/guldcoin/tech-js-node_modules-guld-cli) [![david-dm](https://david-dm.org/guldcoin/tech-js-node_modules-guld-cli/dev-status.svg)](https://david-dm.org/guldcoin/tech-js-node_modules-guld-cli?type=dev)
+
+Guld Decentralized Internet Toolkit.
 
 ### Install
 
-```
+##### Node
+
+```sh
 npm i -g guld-cli
 ```
 
@@ -12,10 +18,12 @@ npm i -g guld-cli
 
 ##### CLI
 
-```
+```sh
+guld --help
+
   Usage: guld [options] [command]
 
-  Guld decentralized internet command line.
+  Guld Decentralized Internet Toolkit.
 
   Options:
 
@@ -30,9 +38,16 @@ npm i -g guld-cli
     git               Git tools and commands.
     mail              Guld mail is a signed, encrypted, and witnessed email system.
     keys              Cryptographic key storage and usage.
-    pass              Encrypted password management comaptible with passwordstore.org
+    pass              Encrypted password management comaptible with passwordstore.org.
     ledger            Guld ledger manager.
     random            Cryptographically secure random number (& string) generator.
     fs                Guld filesystem tools.
+    sdk               Guld Software Developer Kit.
     help [cmd]        display help for [cmd]
+
 ```
+
+### License
+
+MIT Copyright isysd
+
