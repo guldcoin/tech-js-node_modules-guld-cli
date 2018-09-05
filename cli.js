@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 const program = require('commander')
 const thispkg = require(`${__dirname}/package.json`)
+const runCLI = require('guld-cli-run')
 
 const COMMANDS = {
   'user': ['Guld user management tools. Get, list, and check users.'],
@@ -48,9 +49,6 @@ for (var cmd in COMMANDS) {
   }
 }
 
-if (process.argv.length === 2) {
-  program.help()
-} else if (process.argv.length > 2) {
-  program.parse(process.argv)
-}
+/* eslint-enable no-console */
+runCLI.bind(program)()
 module.exports = program
